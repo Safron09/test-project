@@ -4,6 +4,7 @@ import { BasePage } from './BasePage';
 export class TwoFactorPage extends BasePage {
   private readonly codeInput = this.page.locator('#code');
   private readonly rememberBrowserCheckbox = this.page.locator('#rememberBrowser');
+  private readonly rememberBrowserLabel = this.page.locator('label[for="rememberBrowser"]');
   private readonly submitButton = this.page.locator('[data-action-button-primary="true"]');
 
   constructor(page: Page) {
@@ -19,7 +20,7 @@ export class TwoFactorPage extends BasePage {
 
     const isChecked = await this.rememberBrowserCheckbox.isChecked();
     if (!isChecked) {
-      await this.rememberBrowserCheckbox.check();
+      await this.rememberBrowserLabel.click();
     }
 
     await this.codeInput.fill(code);

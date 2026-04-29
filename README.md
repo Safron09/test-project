@@ -20,18 +20,18 @@ src/
 Add commands and how to set up as I go
 
 ## UI and API Tags
-Category	Tags
-Scope	    @smoke @regression @e2e @negative
-Auth	    @auth
-Page	    @devices @users
-Type	    @ui @api
+| Category | Tags |
+|----------|------|
+| Scope | `@smoke` `@regression` `@e2e` `@negative` |
+| Auth | `@auth` |
+| Page | `@devices` `@users` `@navigation` |
+| Type | `@ui` `@api` |
 
 
 ## Docker
 Docker set up for local workflow
 
 ## CI/CD
-
 GitHub Actions workflows run on every push and pull request. UI and API suites run in parallel. Test reports are uploaded as artifacts.
 
 ## Report
