@@ -2,7 +2,9 @@
 
 Temporary task tracker. Top-level phases only.
 
-- [ ] **Phase 1** — Project foundation (config, tsconfig, playwright.config, .env, utils)
+- [+] **Phase 1** — Project foundation (config, tsconfig, playwright.config, .env, utils)
+**Note** All support files are done (Standard format, adjustments needed)
+
 - [ ] **Phase 2** — Auth layer (TOTP helper, page objects for login/2FA, global setup)
 - [ ] **Phase 3** — UI tests (devices page object, fixtures, login / navigation / devices specs)
 - [ ] **Phase 4** — API tests (types, API client, endpoint classes, devices/users specs)
