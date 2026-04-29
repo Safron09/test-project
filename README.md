@@ -1,6 +1,6 @@
 
 TypeScript-based end-to-end test framework covering UI and API layers, built as an assignment project.
-
+Name of the company changed tp Kaiju
 
 ## Structure
 (subject to a change as I move along)
