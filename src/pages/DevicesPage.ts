@@ -1,0 +1,1 @@
+"After Login we have devices page, where we can see all the devices that are connected to our account "

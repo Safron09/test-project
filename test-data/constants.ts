@@ -1,0 +1,1 @@
+"Shared test data, sort of a dump for reusable objexts and values. Not sure if this is the best way to do this, but it is what it is for now."
