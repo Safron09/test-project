@@ -6,7 +6,6 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 export default defineConfig({
   testDir: './tests',
-  testMatch: /.*_(ui|api)\.ts/,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
@@ -26,12 +25,14 @@ export default defineConfig({
   projects: [
     {
       name: 'setup',
+      testDir: '.',
       testMatch: /global-setup\.ts/,
       use: { ...devices['Desktop Chrome'] },
     },
     {
       name: 'ui',
       testDir: './tests/ui',
+      testMatch: /.*_ui\.ts/,
       use: {
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
@@ -41,6 +42,7 @@ export default defineConfig({
     {
       name: 'api',
       testDir: './tests/api',
+      testMatch: /.*_api\.ts/,
     },
   ],
 });
