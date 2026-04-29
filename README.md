@@ -20,11 +20,13 @@ src/
 Add commands and how to set up as I go
 
 ## UI and API Tags
-Category	Tags
-Scope	    @smoke @regression @e2e @negative
-Auth	    @auth
-Page	    @devices @users
-Type	    @ui @api
+
+| Category | Tags |
+|----------|------|
+| Scope | `@smoke` `@regression` `@e2e` `@negative` |
+| Auth | `@auth` |
+| Page | `@devices` `@users` |
+| Type | `@ui` `@api` |
 
 
 ## Docker
