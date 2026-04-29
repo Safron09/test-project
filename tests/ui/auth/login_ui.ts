@@ -14,6 +14,24 @@ test.describe('Login — success', () => {
   });
 });
 
+test.describe('Login — security', () => {
+  test('rejects SQL injection in email field @regression @ui @negative', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.login("' OR '1'='1", config.password);
+
+    await expect(loginPage.errorMessage).toBeVisible();
+    await expect(loginPage.errorMessage).toContainText('Wrong email or password');
+  });
+
+  test('rejects SQL injection in password field @regression @ui @negative', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.login(config.email, "' OR '1'='1' --");
+
+    await expect(loginPage.errorMessage).toBeVisible();
+    await expect(loginPage.errorMessage).toContainText('Wrong email or password');
+  });
+});
+
 test.describe('Login — invalid credentials', () => {
   test('shows error with wrong password @smoke @regression @ui @negative' , async ({ page }) => {
     const loginPage = new LoginPage(page);
@@ -25,7 +43,7 @@ test.describe('Login — invalid credentials', () => {
 
   test('shows error with non-existent email @smoke @regression @ui @negative', async ({ page }) => {
     const loginPage = new LoginPage(page);
-    await loginPage.login('doesnotexist@test.com', 'somepassword');
+    await loginPage.login('doesnotexist@test.com', config.password);
 
     await expect(loginPage.errorMessage).toBeVisible();
     await expect(loginPage.errorMessage).toContainText('Wrong email or password');
