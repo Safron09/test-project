@@ -18,7 +18,10 @@ Temporary task tracker. Top-level phases only.
 
 - [ ] **Phase 5** Reporting (Allure or Playwright HTML, screenshots on failure) (Alredy playwright, but I'll add second one)
 
-- [ ] **Phase 6** Docker (Dockerfile, docker-compose, local end-to-end run verified)
+- [+] **Phase 6** Docker (Dockerfile, docker-compose, local end-to-end run verified)
+
+
 - [ ] **Phase 7** GitHub Actions CI/CD (UI and API pipelines, artifact upload)
+
 - [ ] **Phase 8** Polish (constants, .gitkeep, final README, test tags)
 - [ ] **Phase 8.1** Security checks? Like sqli, forgery?
