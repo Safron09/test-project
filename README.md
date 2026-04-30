@@ -19,6 +19,9 @@ src/
 ## Local Setup
 Add commands and how to set up as I go
 
+## API
+Note. Using public (https://jsonplaceholder.typicode.com) for API testing
+
 ## UI and API Tags
 | Category | Tags |
 |----------|------|
