@@ -19,6 +19,8 @@ playwright/.auth/
 test-results/
 blob-report/
 .playwright/
+allure-results/
+allure-report/
 
 # Logs
 logs/
