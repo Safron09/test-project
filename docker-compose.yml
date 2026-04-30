@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  tests:
+    build: .
+    container_name: kaiju-tests-all
+    env_file: .env
+    environment:
+      - CI=true
+    restart: on-failure
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./allure-results:/app/allure-results
+
+  tests-ui:
+    build: .
+    container_name: kaiju-tests-ui
+    env_file: .env
+    environment:
+      - CI=true
+    command: npx playwright test --project=ui
+    restart: on-failure
+    profiles: [ui]
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./allure-results:/app/allure-results
+
+  tests-api:
+    build: .
+    container_name: kaiju-tests-api
+    env_file: .env
+    environment:
+      - CI=true
+    command: npx playwright test --project=api
+    restart: on-failure
+    profiles: [api]
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./allure-results:/app/allure-results
+
+  tests-smoke:
+    build: .
+    container_name: kaiju-tests-smoke
+    env_file: .env
+    environment:
+      - CI=true
+    command: npx playwright test --grep "@smoke"
+    restart: on-failure
+    profiles: [smoke]
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./allure-results:/app/allure-results
+
+  tests-e2e:
+    build: .
+    container_name: kaiju-tests-e2e
+    env_file: .env
+    environment:
+      - CI=true
+    command: npx playwright test --grep "@e2e"
+    restart: on-failure
+    profiles: [e2e]
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./allure-results:/app/allure-results
+
+  tests-regression:
+    build: .
+    container_name: kaiju-tests-regression
+    env_file: .env
+    environment:
+      - CI=true
+    command: npx playwright test --grep "@regression"
+    restart: on-failure
+    profiles: [regression]
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./allure-results:/app/allure-results
