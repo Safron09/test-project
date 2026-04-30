@@ -16,12 +16,17 @@ Temporary task tracker. Top-level phases only.
 - [+] **Phase 4** API tests (types, API client, endpoint classes, devices/users specs)
 **Note** Using public api for 3 test. Negative, positive and security
 
-- [ ] **Phase 5** Reporting (Allure or Playwright HTML, screenshots on failure) (Alredy playwright, but I'll add second one)
+- [+] **Phase 5** Reporting (Allure or Playwright HTML, screenshots on failure) (Alredy playwright, but I'll add second one)
+**Note** Mocking Allure added (Working)
 
 - [+] **Phase 6** Docker (Dockerfile, docker-compose, local end-to-end run verified)
 
+- [+] **Phase 7** GitHub Actions CI/CD (UI and API pipelines, artifact upload)
+**Note** All tests passed
 
-- [ ] **Phase 7** GitHub Actions CI/CD (UI and API pipelines, artifact upload)
+- [+] **Phase 8** Polish (constants, .gitkeep, final README, test tags)
+**Note** Updating documentation
 
-- [ ] **Phase 8** Polish (constants, .gitkeep, final README, test tags)
-- [ ] **Phase 8.1** Security checks? Like sqli, forgery?
+- [+] **Phase 8.1** Security checks? Like sqli, forgery?
+**Note** Added tests in the process
+

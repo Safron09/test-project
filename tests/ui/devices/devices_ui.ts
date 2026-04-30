@@ -17,7 +17,7 @@ test.describe('Devices', () => {
     }
   });
 
-  test('applies Apple Silicon filter and verifies chip appears @test @regression @ui @devices', async ({ page }) => {
+  test('applies Apple Silicon filter and verifies chip appears @smoke @regression @ui @devices', async ({ page }) => {
     const devicesPage = new DevicesPage(page);
 
     await devicesPage.openDevices();
